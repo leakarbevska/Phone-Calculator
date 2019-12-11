@@ -11,69 +11,61 @@ import android.widget.TextView;
 import android.widget.Button;
 
 public class MainActivity extends Activity {
-    TextView text_Entier1, text_Entier2, text_result;
-    EditText edit_entier1, edit_entier2;
-    Button button_plus, button_minus, button_mult, button_div, button_delete;
+    TextView text_int1, text_int2, text_result;
+    EditText edit_int1, edit_int2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        //System.out.print("Hello world");
 
-        button_plus  = (Button) findViewById(R.id.button_plus);
-        button_minus = (Button) findViewById(R.id.button_minus);
-        button_div   = (Button) findViewById(R.id.button_div);
-        button_mult  = (Button) findViewById(R.id.button_mult);
-        button_delete= (Button) findViewById(R.id.button_delete);
+        text_int1 = (TextView) findViewById(R.id.text_Entier1);
+        text_int2 = (TextView) findViewById(R.id.text_Entier2);
 
-        text_Entier1 = (TextView) findViewById(R.id.text_Entier1);
-        text_Entier2 = (TextView) findViewById(R.id.text_Entier2);
-
-        edit_entier1 = (EditText) findViewById(R.id.text_Entier1);
-        edit_entier2 = (EditText) findViewById(R.id.text_Entier2);
+        edit_int1 = (EditText) findViewById(R.id.text_Entier1);
+        edit_int2 = (EditText) findViewById(R.id.text_Entier2);
 
         text_result  = (TextView) findViewById(R.id.text_result);
     }
 
 
     /*-------------------------- CALCULATION BUTTONS -------------------------*/
-    public void fairePlus(View v) {
+    public void makeAdd(View v) {
         String result = "";
-        if(!checkIfNull(text_Entier1, text_Entier2, edit_entier1, edit_entier2)){
-            int int1 = Integer.parseInt(text_Entier1.getText().toString());
-            int int2 = Integer.parseInt(text_Entier2.getText().toString());
+        if(!checkIfNull(text_int1, text_int2, edit_int1, edit_int2)){
+            int int1 = Integer.parseInt(text_int1.getText().toString());
+            int int2 = Integer.parseInt(text_int2.getText().toString());
             result = String.valueOf(add(int1, int2));
         }
         text_result.setText("Resultat : "+result);
     }
 
-    public void faireMinus(View v){
+    public void makeSubstract(View v){
         String result = "";
-        if(!checkIfNull(text_Entier1, text_Entier2, edit_entier1, edit_entier2)){
-            int int1 = Integer.parseInt(text_Entier1.getText().toString());
-            int int2 = Integer.parseInt(text_Entier2.getText().toString());
+        if(!checkIfNull(text_int1, text_int2, edit_int1, edit_int2)){
+            int int1 = Integer.parseInt(text_int1.getText().toString());
+            int int2 = Integer.parseInt(text_int2.getText().toString());
             result = String.valueOf(substract(int1, int2));
         }
         text_result.setText("Resultat : "+result);
     }
 
-    public void faireMulti(View v){
+    public void makeMultiply(View v){
         String result = "";
-        if(!checkIfNull(text_Entier1, text_Entier2, edit_entier1, edit_entier2)){
-            int int1 = Integer.parseInt(text_Entier1.getText().toString());
-            int int2 = Integer.parseInt(text_Entier2.getText().toString());
+        if(!checkIfNull(text_int1, text_int2, edit_int1, edit_int2)){
+            int int1 = Integer.parseInt(text_int1.getText().toString());
+            int int2 = Integer.parseInt(text_int2.getText().toString());
             result = String.valueOf(multiply(int1, int2));
         }
         text_result.setText("Resultat : "+result);
     }
 
-    public void faireDivi(View v){
+    public void makeDivide(View v){
         String result = "";
-        if(!checkIfNull(text_Entier1, text_Entier2, edit_entier1, edit_entier2)){
-            int int1 = Integer.parseInt(text_Entier1.getText().toString());
-            int int2 = Integer.parseInt(text_Entier2.getText().toString());
-            if(!checkIfDivisionWithZero(text_Entier2, edit_entier2)){
+        if(!checkIfNull(text_int1, text_int2, edit_int1, edit_int2)){
+            int int1 = Integer.parseInt(text_int1.getText().toString());
+            int int2 = Integer.parseInt(text_int2.getText().toString());
+            if(!checkIfDivisionWithZero(text_int2, edit_int2)){
                 result = String.valueOf(divide(int1, int2));
             }
         }
@@ -81,19 +73,20 @@ public class MainActivity extends Activity {
     }
 
     /*------------------------------ EXTRA BUTTONS ---------------------------*/
-    public void lancerActivity2(View v){
+    public void launchActivity2(View v){
         Intent i = new Intent(MainActivity.this, MainActivity2.class);
-        if(!checkIfNull(text_Entier1, text_Entier2, edit_entier1, edit_entier2)){
-            int int1 = Integer.parseInt(text_Entier1.getText().toString());
-            int int2 = Integer.parseInt(text_Entier2.getText().toString());
+        if(!checkIfNull(text_int1, text_int2, edit_int1, edit_int2)){
+            int int1 = Integer.parseInt(text_int1.getText().toString());
+            int int2 = Integer.parseInt(text_int2.getText().toString());
             i.putExtra("entier1",int1);
             i.putExtra("entier2",int2);
         }
         startActivity(i);
     }
 
-    public void faireEffacer(View v){
-        delete(text_Entier1,text_Entier2);
+
+    public void makeDelete(View v){
+        delete(text_int1,text_int2);
     }
 
 
@@ -107,6 +100,7 @@ public class MainActivity extends Activity {
         return false;
     }
 
+
     public static boolean checkIfNull(TextView text_Entier1, TextView text_Entier2, EditText edit_entier1, EditText edit_entier2){
         Boolean result = false;
 
@@ -119,6 +113,7 @@ public class MainActivity extends Activity {
         }
         return result;
     }
+
 
     public static void delete(TextView text_Entier1, TextView text_Entier2){
         text_Entier1.setText("");

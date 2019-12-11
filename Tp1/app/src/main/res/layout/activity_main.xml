@@ -19,56 +19,56 @@
 
     <EditText
         android:id="@+id/text_Entier2"
-        android:layout_width="175dp"
-        android:layout_height="0dp"
-        android:layout_marginTop="44dp"
+        android:layout_width="181dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="40dp"
         android:ems="10"
         android:hint="Entier 2"
         android:inputType="number"
         app:layout_constraintTop_toBottomOf="@+id/text_Entier1"
-        tools:layout_editor_absoluteX="17dp" />
+        tools:layout_editor_absoluteX="11dp" />
 
     <Button
         android:id="@+id/button_plus"
-        android:layout_width="52dp"
+        android:layout_width="50dp"
         android:layout_height="0dp"
-        android:layout_marginTop="68dp"
+        android:layout_marginTop="44dp"
+        android:onClick="makeAdd"
         android:text="+"
-        android:onClick="fairePlus"
         app:layout_constraintTop_toBottomOf="@+id/text_Entier2"
-        tools:layout_editor_absoluteX="28dp" />
-
-    <Button
-        android:id="@+id/button_minus"
-        android:layout_width="39dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="36dp"
-        android:layout_marginTop="68dp"
-        android:text="-"
-        android:onClick="faireMinus"
-        app:layout_constraintStart_toEndOf="@+id/button_plus"
-        app:layout_constraintTop_toBottomOf="@+id/text_Entier2" />
+        tools:layout_editor_absoluteX="17dp" />
 
     <Button
         android:id="@+id/button_mult"
-        android:layout_width="46dp"
+        android:layout_width="50dp"
         android:layout_height="0dp"
-        android:layout_marginStart="36dp"
-        android:layout_marginTop="68dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="44dp"
+        android:onClick="makeMultiply"
         android:text="*"
-        android:onClick="faireMulti"
         app:layout_constraintStart_toEndOf="@+id/button_minus"
         app:layout_constraintTop_toBottomOf="@+id/text_Entier2" />
 
     <Button
         android:id="@+id/button_div"
-        android:layout_width="48dp"
-        android:layout_height="44dp"
-        android:layout_marginStart="36dp"
-        android:layout_marginTop="72dp"
+        android:layout_width="50dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="44dp"
+        android:onClick="makeDivide"
         android:text="/"
-        android:onClick="faireDivi"
         app:layout_constraintStart_toEndOf="@+id/button_mult"
+        app:layout_constraintTop_toBottomOf="@+id/text_Entier2" />
+
+    <Button
+        android:id="@+id/button_minus"
+        android:layout_width="50dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="44dp"
+        android:onClick="makeSubstract"
+        android:text="-"
+        app:layout_constraintStart_toEndOf="@+id/button_plus"
         app:layout_constraintTop_toBottomOf="@+id/text_Entier2" />
 
     <TextView
@@ -87,7 +87,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="72dp"
         android:text="Effacer"
-        android:onClick="faireEffacer"
+        android:onClick="makeDelete"
         app:layout_constraintStart_toEndOf="@+id/text_Entier2"
         tools:layout_editor_absoluteY="114dp" />
 
@@ -97,7 +97,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="36dp"
         android:text="Lancer Activity2"
-        android:onClick="lancerActivity2"
+        android:onClick="launchActivity2"
         app:layout_constraintTop_toBottomOf="@+id/text_result"
         tools:layout_editor_absoluteX="6dp" />
 

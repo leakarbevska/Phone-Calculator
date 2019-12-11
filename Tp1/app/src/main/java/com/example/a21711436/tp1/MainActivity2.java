@@ -12,30 +12,26 @@ import android.widget.RadioGroup;
 import android.widget.TextView;
 
 public class MainActivity2 extends Activity {
-    TextView text_Entier1, text_Entier2, text_result;
-    EditText int2_edit, int1_edit;
-    Button   button_calculer, button_effacer;
+    TextView text_int1, text_int2, text_result;
+    EditText edit_int1, edit_int2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2);
 
-        text_Entier1 = (TextView) findViewById(R.id.text_int1);
-        text_Entier2 = (TextView) findViewById(R.id.text_int2);
+        text_int1 = (TextView) findViewById(R.id.text_int1);
+        text_int2 = (TextView) findViewById(R.id.text_int2);
 
-        int1_edit = (EditText) findViewById(R.id.text_int1);
-        int2_edit = (EditText) findViewById(R.id.text_int2);
+        edit_int1 = (EditText) findViewById(R.id.text_int1);
+        edit_int2 = (EditText) findViewById(R.id.text_int2);
 
         text_result  = (TextView) findViewById(R.id.text_resultat);
 
-        button_calculer = (Button) findViewById(R.id.button_calculer);
-        button_effacer  = (Button) findViewById(R.id.button_effacer);
-
         Bundle extras = getIntent().getExtras();
         if(extras != null){
-            text_Entier1.setText(String.valueOf(extras.getInt("entier1")));
-            text_Entier2.setText(String.valueOf(extras.getInt("entier2")));
+            text_int1.setText(String.valueOf(extras.getInt("entier1")));
+            text_int2.setText(String.valueOf(extras.getInt("entier2")));
         }
     }
 
@@ -45,9 +41,9 @@ public class MainActivity2 extends Activity {
         int selectedId = radioGroup.getCheckedRadioButtonId();
         String result = "";
 
-        if(!MainActivity.checkIfNull(text_Entier1, text_Entier2, int1_edit, int2_edit) && selectedId != -1){
-            int int1 = Integer.parseInt(text_Entier1.getText().toString());
-            int int2 = Integer.parseInt(text_Entier2.getText().toString());
+        if(!MainActivity.checkIfNull(text_int1, text_int2, edit_int1, edit_int2) && selectedId != -1){
+            int int1 = Integer.parseInt(text_int1.getText().toString());
+            int int2 = Integer.parseInt(text_int2.getText().toString());
 
             switch (selectedId) {
                 case R.id.rb_plus:
@@ -60,16 +56,15 @@ public class MainActivity2 extends Activity {
                     result = String.valueOf(MainActivity.multiply(int1, int2));
                     break;
                 case R.id.rb_div:
-                    if(!MainActivity.checkIfDivisionWithZero(text_Entier2, int2_edit)){
-                        result = String.valueOf(MainActivity.divide(int1, int2));
-                    }
+                    if(!MainActivity.checkIfDivisionWithZero(text_int2, edit_int2)){
+                        result = String.valueOf(MainActivity.divide(int1, int2)); }
                     break;
             }
         }
         text_result.setText("Resultat : "+result);
     }
 
-    public void delete(View v){
-        MainActivity.delete(text_Entier1, text_Entier2);
+    public void makeDelete(View v){
+        MainActivity.delete(text_int1, text_int2);
     }
 }

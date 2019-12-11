@@ -64,7 +64,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="52dp"
-        android:onClick="delete"
+        android:onClick="makeDelete"
         android:text="Effacer"
         app:layout_constraintStart_toEndOf="@+id/text_int2"
         tools:layout_editor_absoluteY="200dp" />
