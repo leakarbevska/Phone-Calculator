@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <EditText
+        android:id="@+id/text_Entier1"
+        android:layout_width="181dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="24dp"
+        android:ems="10"
+        android:hint="Entier 1"
+        android:inputType="number"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="11dp" />
+
+    <EditText
+        android:id="@+id/text_Entier2"
+        android:layout_width="175dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="44dp"
+        android:ems="10"
+        android:hint="Entier 2"
+        android:inputType="number"
+        app:layout_constraintTop_toBottomOf="@+id/text_Entier1"
+        tools:layout_editor_absoluteX="17dp" />
+
+    <Button
+        android:id="@+id/button_plus"
+        android:layout_width="52dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="68dp"
+        android:text="+"
+        android:onClick="fairePlus"
+        app:layout_constraintTop_toBottomOf="@+id/text_Entier2"
+        tools:layout_editor_absoluteX="28dp" />
+
+    <Button
+        android:id="@+id/button_minus"
+        android:layout_width="39dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="68dp"
+        android:text="-"
+        android:onClick="faireMinus"
+        app:layout_constraintStart_toEndOf="@+id/button_plus"
+        app:layout_constraintTop_toBottomOf="@+id/text_Entier2" />
+
+    <Button
+        android:id="@+id/button_mult"
+        android:layout_width="46dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="68dp"
+        android:text="*"
+        android:onClick="faireMulti"
+        app:layout_constraintStart_toEndOf="@+id/button_minus"
+        app:layout_constraintTop_toBottomOf="@+id/text_Entier2" />
+
+    <Button
+        android:id="@+id/button_div"
+        android:layout_width="48dp"
+        android:layout_height="44dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="72dp"
+        android:text="/"
+        android:onClick="faireDivi"
+        app:layout_constraintStart_toEndOf="@+id/button_mult"
+        app:layout_constraintTop_toBottomOf="@+id/text_Entier2" />
+
+    <TextView
+        android:id="@+id/text_result"
+        android:layout_width="186dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="52dp"
+        android:text="Resultat"
+        android:visibility="visible"
+        app:layout_constraintTop_toBottomOf="@+id/button_plus"
+        tools:layout_editor_absoluteX="6dp" />
+
+    <Button
+        android:id="@+id/button_delete"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="72dp"
+        android:text="Effacer"
+        android:onClick="faireEffacer"
+        app:layout_constraintStart_toEndOf="@+id/text_Entier2"
+        tools:layout_editor_absoluteY="114dp" />
+
+    <Button
+        android:id="@+id/button_activity2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="36dp"
+        android:text="Lancer Activity2"
+        android:onClick="lancerActivity2"
+        app:layout_constraintTop_toBottomOf="@+id/text_result"
+        tools:layout_editor_absoluteX="6dp" />
+
+</android.support.constraint.ConstraintLayout>

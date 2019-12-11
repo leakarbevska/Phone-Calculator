@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity2">
+
+    <EditText
+        android:id="@+id/text_int1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="44dp"
+        android:ems="10"
+        android:hint="Entier1"
+        android:inputType="numberSigned"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="-1dp" />
+
+    <EditText
+        android:id="@+id/text_int2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:ems="10"
+        android:hint="Entier2"
+        android:inputType="numberSigned"
+        app:layout_constraintTop_toBottomOf="@+id/radioGroup"
+        tools:layout_editor_absoluteX="0dp" />
+
+    <Button
+        android:id="@+id/button_calculer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="44dp"
+        android:onClick="calculate"
+        android:text="Calculer"
+        app:layout_constraintTop_toBottomOf="@+id/text_int2"
+        tools:layout_editor_absoluteX="0dp" />
+
+    <TextView
+        android:id="@+id/text_resultat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:text="Resultat:"
+        app:layout_constraintTop_toBottomOf="@+id/button_calculer"
+        tools:layout_editor_absoluteX="0dp" /><![CDATA[
+
+
+
+    ;
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="105dp">
+
+
+
+
+
+    ]]>
+
+    <Button
+        android:id="@+id/button_effacer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="52dp"
+        android:onClick="delete"
+        android:text="Effacer"
+        app:layout_constraintStart_toEndOf="@+id/text_int2"
+        tools:layout_editor_absoluteY="200dp" />
+
+    <RadioGroup
+        android:id="@+id/radioGroup"
+        android:layout_width="187dp"
+        android:layout_height="42dp"
+        android:layout_marginTop="32dp"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@+id/text_int1"
+        tools:layout_editor_absoluteX="0dp">
+
+        <RadioButton
+            android:id="@+id/rb_plus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="+" />
+
+        <RadioButton
+            android:id="@+id/rb_minus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="-" />
+
+        <RadioButton
+            android:id="@+id/rb_div"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="/" />
+
+        <RadioButton
+            android:id="@+id/rb_mult"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="*" />
+    </RadioGroup>
+
+
+</android.support.constraint.ConstraintLayout>
